@@ -5,21 +5,25 @@
       <meta name="description" content="BuyOnline manager login" />
       <meta name="author" content="Claire O'Donoghue"  />
       <title>Manager Entry - BuyOnline</title>
+      <script src="checkManagerStatus.js"></script>
       <script src="processMLogin.js"></script>
     </head>
     <body>
+    <nav id="nav">
+    	<a title="BuyOnline Home Page" href="buyonline.html">Back</a>
+    </nav>
 		<h1>Manager Entry - BuyOnline</h1>
+		<p id="response"></p>
 		<form id="managerLoginForm">
 			<p>
 				<label for="managerId">Manager ID:</label>
-				<input type="text" id="managerId" name="managerId" required="required"/>
+				<input type="text" id="managerId" name="managerId"/>
 			</p>
 			<p>
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" required="required"/>
+				<input type="password" id="password" name="password"/>
 			</p>
 			<input type="button" id="submit" value="Login"/>
 		</form>
-		<p>Go back to the <a href="buyonline.html" title="BuyOnline home page">home page</a></p>
 	</body>
 </html>

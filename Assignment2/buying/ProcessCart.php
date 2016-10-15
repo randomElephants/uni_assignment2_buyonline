@@ -10,17 +10,9 @@ if (isset($_SESSION['cart'])) {
 		$action = $_GET["action"];
 		$goodsDoc = new DOMDocument();
 		
+		//TODO: remove level from folder
 		if ($goodsDoc->load("../../../data/goods.xml")) {
 			//Successfully loaded all params & the goods doc, proceed with the action
-			
-// 			$xpath = new DOMXPath($goodsDoc);
-			
-// 			$query = '//goodsList/good/itemNum[text()=000001]';
-// 			$entries = $xpath->query($query);
-			
-// 			foreach($entries as $entry) {
-// 				echo $entry->nodeValue;
-// 			}
 			
 			if ($action == "confirm") {
 				echo confirmPurchase($cart, $goodsDoc);

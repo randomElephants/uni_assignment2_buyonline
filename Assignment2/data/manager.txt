@@ -1,3 +1,3 @@
 Manager1, password1
-Manager2, password2
-Manager3, password3
+Mana2, password2
+Man3, password3
