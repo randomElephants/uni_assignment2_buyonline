@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/ht-docs/goodsSold.xsl"?>
+<!DOCTYPE goodsList [
+	<!ELEMENT goodsList ((good*))>
+	<!ELEMENT good ((itemNum, name, unitPrice, description?))>
+	<!ATTLIST good available CDATA "0">
+	<!ATTLIST good hold CDATA "0">
+	<!ATTLIST good sold CDATA "0">
+	<!ELEMENT itemNum (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT unitPrice (#PCDATA)>
+	<!ELEMENT description (#PCDATA)>
+]>
+
+<goodsList>
+	<good available="20" hold="0" sold="1">
+		<itemNum>000001</itemNum>
+		<name>Thing-a-majig</name>
+		<unitPrice>4.99</unitPrice>
+		<description/>
+	</good>
+	<good available="10" hold="0" sold="3">
+		<itemNum>000002</itemNum>
+		<name>Whatcha-ma-call-it</name>
+		<unitPrice>20.00</unitPrice>
+		<description>What is this thing?</description>
+	</good>
+	<good available="15" hold="0" sold="0">
+		<itemNum>000003</itemNum>
+		<name>Whatzit</name>
+		<unitPrice>3.49</unitPrice>
+		<description>The coolest thing ever!!!</description>
+	</good>
+	<good available="3" hold="0" sold="0">
+		<itemNum>000004</itemNum>
+		<name>Slinky</name>
+		<unitPrice>2.99</unitPrice>
+		<description>Goes down stairs!</description>
+	</good>
+	<good available="5" hold="0" sold="0">
+		<itemNum>000005</itemNum>
+		<name>YoYo</name>
+		<unitPrice>1.50</unitPrice>
+	</good>	
+</goodsList>

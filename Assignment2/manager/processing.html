@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8" />
+		<meta name="description" content="BuyOnline goods processing" />
+		<meta name="author" content="Claire O'Donoghue"  />
+		<title>Processing - BuyOnline</title>
+		<script src="processProcessing.js"></script>
+    </head>
+	<body>
+	
+	<h1>Processing Form</h1>
+	
+	<p id="processResult"></p>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Item Number</th>
+				<th>Item Name</th>
+				<th>Price</th>
+				<th>Quantity Available</th>
+				<th>Quantity on Hold</th>
+				<th>Quantity Sold</th>
+			</tr>
+		</thead>
+		<tbody id="resultBody">
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3"><input type="button" id="processButton" value="Process"/></td>
+				<td colspan="3"><input type="button" id="updateButton" value="Refresh table"/></td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	</body>
+</html>

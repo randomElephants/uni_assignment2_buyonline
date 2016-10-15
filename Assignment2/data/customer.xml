@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customerList [
+	<!ELEMENT customerList ((customer*))>
+	<!ELEMENT customer ((customerId, firstName, lastName, password, email, phone?))>
+	<!ELEMENT customerId (#PCDATA)>
+	<!ELEMENT firstName (#PCDATA)>
+	<!ELEMENT lastName (#PCDATA)>
+	<!ELEMENT password (#PCDATA)>
+	<!ELEMENT phone (#PCDATA)>
+]>
+
+<customerList>
+	<customer>
+		<customerId>10001</customerId>
+		<firstName>Jane</firstName>
+		<lastName>Smith</lastName>
+		<password>abc123</password>
+		<email>janesmith@example.com</email>
+		<phone/>
+	</customer>
+	<customer>
+		<customerId>10002</customerId>
+		<firstName>John</firstName>
+		<lastName>Brown</lastName>
+		<password>password</password>
+		<email>jbrown@example.org</email>
+		<phone>04 11111111</phone>	
+	</customer>
+	<customer>
+		<customerId>10003</customerId>
+		<firstName>Bob</firstName>
+		<lastName>Carter</lastName>
+		<password>secret03</password>
+		<email>carterrox@example.eu</email>
+		<phone>(04) 22222222</phone>	
+	</customer>
+</customerList>

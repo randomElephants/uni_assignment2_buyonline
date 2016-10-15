@@ -1,0 +1,3 @@
+Manager1, password1
+Manager2, password2
+Manager3, password3
