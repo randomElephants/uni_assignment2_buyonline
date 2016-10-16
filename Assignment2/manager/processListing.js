@@ -22,6 +22,8 @@ function getServerResponse ()
 	{
         var serverResponse = http.responseText;
         document.getElementById("processResult").innerHTML = serverResponse;
+        var form = document.getElementById("addListingForm");
+        form.reset();
 	}
 }
 

@@ -12,10 +12,18 @@
         //Create the "good" (product) element
         $newItem = $goodsDoc->createElement("good");
         
+        //Make a new item number - might eventually get a duplicate:(
+        $int = rand(0, 99000);
+        $itemNumber = $int . substr($itemName, 0, 4);
+        
         //Set the attributes
         $newItem->setAttribute("available", $itemQuantAvail);
         $newItem->setAttribute("hold", 0);
         $newItem->setAttribute("sold", 0);
+        
+        //Create and append the "itemNum" node
+        $newItemNumber = $goodsDoc->createElement("itemNum", $itemNumber);
+        $newItem->appendChild($newItemNumber);
         
         //Create and append the "name"
         $newItemName = $goodsDoc->createElement("name", $itemName);
@@ -27,12 +35,12 @@
         
         //Create and append the "description"
         if ($itemDesc != "") {
-            $newItemDesc = $goodsDoc->createElement("name", $itemDesc);
+            $newItemDesc = $goodsDoc->createElement("description", $itemDesc);
             $newItem->appendChild($newItemDesc);
         }
         
         //If this fails, it creates a warning I don't know how to suppress.
-        if ($goodsDoc->load("../../data/goods.xml")) {
+        if ($goodsDoc->load("../../../data/goods.xml")) {
             //Add to existing document
             $list = $goodsDoc->getElementsByTagName("goodsList")->item(0);
             $list->appendChild($goodsDoc->importNode($newItem, true));
@@ -46,7 +54,7 @@
            //TODO: remove folder level
            $goodsDoc->save("../../../data/goods.xml");
          }      
-        echo "New item saved.";
+        echo "The item has been listed in the system, and the item number is $itemNumber";
     } else {
         echo "There was a problem adding the item.";
     }

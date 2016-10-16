@@ -86,13 +86,13 @@ function getShoppingCartResponse() {
             for (var i =0; i < cartRemoveButtons.length; i++) {
                 cartRemoveButtons[i].onclick = processRemoveFromCart;
             }
+            
+            var cancelButton = document.getElementById("cancel");
+            cancelButton.onclick = cancelPurchase;
+            
+            var confirmButton = document.getElementById("confirm");
+            confirmButton.onclick = confirmPurchase;
         }
-        
-        var cancelButton = document.getElementById("cancel");
-        cancelButton.onclick = cancelPurchase;
-        
-        var confirmButton = document.getElementById("confirm");
-        confirmButton.onclick = confirmPurchase;
         
         getAvailableProducts();
     }

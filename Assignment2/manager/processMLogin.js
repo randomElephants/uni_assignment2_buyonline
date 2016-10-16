@@ -30,7 +30,7 @@ function addManagerNavigation() {
 	processingLink.innerHTML = "Processing";
 	
 	var logoutLink = document.createElement("a");
-	logoutLink.href="logout.html";
+	logoutLink.href="Logout.php";
 	logoutLink.title="Logout";
 	logoutLink.innerHTML = "Logout";
 	
