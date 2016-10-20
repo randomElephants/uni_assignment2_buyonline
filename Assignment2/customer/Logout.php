@@ -3,8 +3,10 @@ session_start();
 $person;
 
 if (isset($_SESSION["customer"])) {
+	$person = $_SESSION["customer"];
+	unset($_SESSION["customer"]);
 
-} else if (isset($_SESSION["manage"])) {
+} else if (isset($_SESSION["manager"])) {
 	//Logout the manager;
 	$person = $_SESSION["manager"];
 	unset($_SESSION["manager"]);	

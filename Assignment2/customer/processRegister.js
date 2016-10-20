@@ -21,10 +21,30 @@ xHRObject = new ActiveXObject("Microsoft.XMLHTTP");
 
 function getResponse() {
     if ((xHRObject.readyState == 4) &&(xHRObject.status == 200)) {
-    	//TODO: need to figure out what I'm getting back here?
         var serverResponse = xHRObject.responseText;
-        var placeForStuff = document.getElementById("result");
-        placeForStuff.innerHTML = "Response: " + serverResponse;
+        var response;
+        
+        var regex = /^[0-9]{1}$/
+        
+        if (!(regex.test(serverResponse))) {
+        	response = "Welcome to BuyOnline, " + serverResponse + ". You are now registered and logged in.";
+        	document.getElementById("customerRegistrationForm").style.display = "none";
+        	var nav = document.getElementById("nav");
+        	var logoutLink = document.createElement("a");
+        	logoutLink.href="Logout.php";
+        	logoutLink.title="Logout";
+        	logoutLink.innerHTML = "Logout";
+        	nav.appendChild(logoutLink);
+        } else {
+        	//One of the error codes
+        	if (serverResponse == "3") {
+        		response = "Sorry, that email address is already registered. Try logging in!";
+        	} else {
+        		response = "Sorry, something went wrong with your registration. Please try again later! (Code: " + serverResponse + ")";
+        	}
+        }
+        
+        document.getElementById("result").innerHTML = response;
     }
 }
 
@@ -91,11 +111,15 @@ function customerRegistration() {
 		
 	if (isRegistrationValid(errors, fName, lName, email, phone, password, confirmPassword)) {
 		addCustomer(fName, lName, email, phone, password);
+		document.getElementById("customerRegistrationForm").reset();
 	} else {
 		var errmessage = "";
 		for (var i=0; i<errors.length; i++) {
 			errmessage += errors[i] + " ";
 		}
+		
+		document.getElementById("password").value = "";
+		document.getElementById("confirmPassword").value= "";
 		
 		alert(errmessage);
 	}	
